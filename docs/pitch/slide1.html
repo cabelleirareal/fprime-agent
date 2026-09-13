@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>FPOA — Slide 1 · Capa</title>
+<style>
+  :root{
+    --bg:#070b14; --surface:#0d1424; --surface2:#111a2e; --line:rgba(148,163,184,.14);
+    --gold:#d4af37; --gold2:#f5e7a3; --cyan:#38bdf8; --green:#34d399; --rose:#fb7185;
+    --text:#f1f5f9; --muted:#94a3b8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1920px;height:1080px;overflow:hidden;background:
+    radial-gradient(ellipse 55% 55% at 12% -5%, rgba(212,175,55,.14), transparent 60%),
+    radial-gradient(ellipse 45% 45% at 95% 110%, rgba(56,189,248,.08), transparent 60%),
+    var(--bg);
+    color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;position:relative}
+  body::before{content:'';position:absolute;inset:0;background-image:
+    linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px);
+    background-size:52px 52px;pointer-events:none}
+  .frame{position:absolute;inset:26px;border:1px solid rgba(212,175,55,.28);border-radius:22px;pointer-events:none}
+  .frame::after{content:'';position:absolute;top:-3px;left:60px;width:120px;height:5px;background:linear-gradient(90deg,var(--gold),transparent);border-radius:3px}
+
+  .wrap{position:relative;z-index:2;height:1080px;padding:56px 84px 48px;display:flex;flex-direction:column}
+  header{display:flex;justify-content:space-between;align-items:center;margin-bottom:44px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .logo{width:48px;height:48px;border-radius:13px;background:linear-gradient(135deg,#e8c766,#8a6d1f);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:24px;color:#070b14;box-shadow:0 0 24px rgba(212,175,55,.35)}
+  .brand .t1{font-size:17px;font-weight:700;letter-spacing:.4px}
+  .brand .t2{font-size:11px;color:var(--muted);letter-spacing:2.2px;text-transform:uppercase}
+  .pill{font-size:12.5px;color:var(--gold2);border:1px solid rgba(212,175,55,.4);padding:7px 18px;border-radius:999px;font-weight:600;letter-spacing:.6px;background:rgba(212,175,55,.07)}
+
+  .grid{flex:1;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+  .kicker{font-size:13px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:18px}
+  h1{font-family:'Sora','Inter',sans-serif;font-size:64px;line-height:1.08;font-weight:800;letter-spacing:-1.5px}
+  h1 .line{display:block}
+  h1 em{font-style:normal;color:var(--gold2)}
+  .sub{font-size:19.5px;color:var(--muted);margin-top:22px;max-width:830px;line-height:1.55}
+  .sub b{color:var(--text)}
+  .to{display:inline-flex;align-items:center;gap:10px;margin-top:28px;background:linear-gradient(90deg,rgba(212,175,55,.16),rgba(212,175,55,.03));
+    border:1px solid rgba(212,175,55,.35);padding:13px 24px;border-radius:14px;font-size:16.5px;font-weight:600}
+  .to .nm{color:var(--gold2);font-weight:800}
+  .stats{display:flex;gap:44px;margin-top:44px}
+  .st .n{font-size:30px;font-weight:800;color:var(--gold2);font-family:'Sora',sans-serif}
+  .st .l{font-size:12.5px;color:var(--muted);margin-top:2px}
+
+  /* mock chat */
+  .chat{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);
+    border-radius:22px;padding:30px 28px;box-shadow:0 30px 70px rgba(0,0,0,.45);position:relative}
+  .chat .ch-h{display:flex;align-items:center;gap:12px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .chat .av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#e8c766,#8a6d1f);display:flex;align-items:center;justify-content:center;font-weight:800;color:#070b14;font-size:16px}
+  .chat .ch-t{font-size:14px;font-weight:700}
+  .chat .ch-s{font-size:11px;color:var(--muted);letter-spacing:.8px;text-transform:uppercase}
+  .bubble{max-width:88%;padding:12px 16px;border-radius:15px;font-size:14.5px;line-height:1.45;margin-bottom:12px}
+  .b-u{align-self:flex-start;background:#1a2438;border:1px solid var(--line);color:var(--text);border-bottom-left-radius:4px}
+  .b-a{align-self:flex-end;margin-left:auto;background:linear-gradient(135deg,rgba(212,175,55,.22),rgba(212,175,55,.1));border:1px solid rgba(212,175,55,.3);color:var(--gold2);border-bottom-right-radius:4px}
+  .chat .msgs{display:flex;flex-direction:column}
+  .badge24{position:absolute;top:-18px;right:26px;background:linear-gradient(135deg,#d4af37,#8a6d1f);color:#070b14;font-weight:800;font-size:13px;
+    padding:8px 16px;border-radius:999px;letter-spacing:1px;box-shadow:0 8px 30px rgba(212,175,55,.4)}
+</style>
+</head>
+<body>
+<div class="frame"></div>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">F</div>
+      <div><div class="t1">F.PRIME REPRESENTAÇÕES</div><div class="t2">Pitch de Negócio · 2026</div></div>
+    </div>
+    <div class="pill">⚡ Operação 24/7 · Zero API paga</div>
+  </header>
+
+  <div class="grid">
+    <div>
+      <div class="kicker">FPOA · F.PRIME Operations Agent</div>
+      <h1>
+        <span class="line">O funcionário que</span>
+        <span class="line"><em>nunca dorme</em>, nunca esquece</span>
+        <span class="line">e nunca erra um preço.</span>
+      </h1>
+      <p class="sub">O <b>FPOA</b> é o assistente operacional-comercial que centraliza a operação do
+      seu escritório de representação: catálogo das <b>100+ fábricas</b>, pedidos rastreados
+      da cotação à comissão, CRM de lojistas e relatórios prontos em minutos.</p>
+
+      <div class="to">🎯 Desenhado sob medida para <span class="nm">&nbsp;Felip Nunes&nbsp;</span> · F.PRIME Representações</div>
+
+      <div class="stats">
+        <div class="st"><div class="n">100+</div><div class="l">fábricas num único catálogo</div></div>
+        <div class="st"><div class="n">24/7</div><div class="l">follow-up sem esquecimento</div></div>
+        <div class="st"><div class="n">100%</div><div class="l">comissões rastreadas</div></div>
+      </div>
+    </div>
+
+    <div class="chat">
+      <div class="badge24">● ONLINE 24/7</div>
+      <div class="ch-h">
+        <div class="av">F</div>
+        <div><div class="ch-t">FPOA · Assistente</div><div class="ch-s">operando agora</div></div>
+      </div>
+      <div class="msgs">
+        <div class="bubble b-u">Status do pedido #1042?</div>
+        <div class="bubble b-a">✅ Faturado na Malhas Prime às 09:12 — comissão de R$ 161,82 prevista.</div>
+        <div class="bubble b-u">Quanto é o conjunto moletom M da Malhas Prime?</div>
+        <div class="bubble b-a">R$ 89,90 · em estoque · prazo 30d — <b>tabela vigente</b>.</div>
+        <div class="bubble b-u">Quem não compra há 45 dias?</div>
+        <div class="bubble b-a">3 lojistas: Bela Moda, Casa Mania, Cia. da Moda — quer que eu monte o roteiro de visita?</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

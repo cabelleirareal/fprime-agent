@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>FPOA — Slide 4 · Prova + CTA</title>
+<style>
+  :root{
+    --bg:#070b14; --surface:#0d1424; --surface2:#111a2e; --line:rgba(148,163,184,.14);
+    --gold:#d4af37; --gold2:#f5e7a3; --cyan:#38bdf8; --green:#34d399; --rose:#fb7185;
+    --text:#f1f5f9; --muted:#94a3b8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1920px;height:1080px;overflow:hidden;background:
+    radial-gradient(ellipse 55% 50% at 15% -5%, rgba(212,175,55,.13), transparent 60%),
+    radial-gradient(ellipse 40% 45% at 98% 105%, rgba(52,211,153,.07), transparent 60%),
+    var(--bg);
+    color:var(--text);font-family:'Inter',system-ui,sans-serif;position:relative}
+  body::before{content:'';position:absolute;inset:0;background-image:
+    linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px);
+    background-size:52px 52px;pointer-events:none}
+  .wrap{position:relative;z-index:2;padding:52px 84px 44px;height:1080px;display:flex;flex-direction:column}
+  .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  .num{font-family:'Sora',sans-serif;font-size:13px;letter-spacing:3px;color:var(--green);font-weight:700}
+  .pageno{font-size:12px;color:var(--muted);letter-spacing:2px}
+  h2{font-family:'Sora',sans-serif;font-size:46px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
+  h2 em{font-style:normal;color:var(--gold2)}
+  .lead{font-size:17px;color:var(--muted);max-width:1050px;margin-bottom:28px}
+
+  .row{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;flex:1}
+  .metrics{display:grid;grid-template-columns:1fr 1fr;gap:13px;align-content:start}
+  .m{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:15px;padding:16px 19px;position:relative;overflow:hidden}
+  .m::after{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--gold),transparent)}
+  .m .mn{font-family:'Sora',sans-serif;font-size:31px;font-weight:800;color:var(--gold2)}
+  .m .ml{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.4}
+
+  .donut-wrap{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;justify-content:center}
+  .donut-wrap h3{font-size:14px;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:20px;text-align:center}
+  .donut{position:relative;width:210px;height:210px;margin:0 auto 20px}
+  .donut .ring{width:100%;height:100%;border-radius:50%;background:conic-gradient(var(--gold) 0 72%,#1a2438 72% 100%);display:flex;align-items:center;justify-content:center}
+  .donut .hole{position:absolute;inset:34px;background:var(--surface);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .donut .hole .v{font-family:'Sora',sans-serif;font-size:30px;font-weight:800;color:var(--gold2)}
+  .donut .hole .l{font-size:11px;color:var(--muted);text-align:center;line-height:1.3}
+  .legend{display:flex;flex-direction:column;gap:9px;font-size:12.5px;color:var(--muted)}
+  .legend .li{display:flex;align-items:center;gap:10px}
+  .legend .sw{width:13px;height:13px;border-radius:4px}
+
+  .close{background:linear-gradient(135deg,rgba(212,175,55,.2),rgba(212,175,55,.05));border:1px solid rgba(212,175,55,.4);border-radius:18px;padding:26px 30px;margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+  .close .ct{font-family:'Sora',sans-serif;font-size:25px;font-weight:800;line-height:1.25}
+  .close .ct em{font-style:normal;color:var(--gold2)}
+  .close .btn{background:linear-gradient(135deg,#e8c766,#8a6d1f);color:#070b14;font-weight:800;font-size:16px;padding:15px 32px;border-radius:13px;white-space:nowrap;box-shadow:0 10px 34px rgba(212,175,55,.35);letter-spacing:.4px}
+  .close .more{font-size:12px;color:var(--muted);margin-top:5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="num">03 · RESULTADOS</div>
+    <div class="pageno">FPOA — PITCH F.PRIME · 4/4</div>
+  </div>
+  <h2>O que muda na prática com o <em>FPOA</em></h2>
+  <p class="lead">Metas de operação desenhadas para o escritório — mensuráveis, alcançáveis, sem promessas vazias.</p>
+
+  <div class="row">
+    <div class="metrics">
+      <div class="m"><div class="mn">&lt; 5 min</div><div class="ml">de resposta a lojista (hoje: horas ou nunca)</div></div>
+      <div class="m"><div class="mn">100%</div><div class="ml">de comissões rastreadas e conciliáveis</div></div>
+      <div class="m"><div class="mn">0</div><div class="ml">pedidos sem follow-up ativo</div></div>
+      <div class="m"><div class="mn">+15%</div><div class="ml">recorrência de lojistas em 6 meses</div></div>
+      <div class="m"><div class="mn">1 dia</div><div class="ml">prestação de contas por representada (antes: dias)</div></div>
+      <div class="m"><div class="mn">24/7</div><div class="ml">operação sem depender de 1 pessoa</div></div>
+    </div>
+
+    <div class="donut-wrap">
+      <h3>Onde o tempo do Felip é gasto hoje</h3>
+      <div class="donut">
+        <div class="ring"><div class="hole"><div class="v">72%</div><div class="l">tarefas operacionais<br>repetitivas</div></div></div>
+      </div>
+      <div class="legend">
+        <div class="li"><span class="sw" style="background:var(--gold)"></span>72% tarefas manuais que o FPOA automatiza</div>
+        <div class="li"><span class="sw" style="background:#1a2438"></span>28% o que realmente exige o dono (decisão, relacionamento)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="close">
+    <div class="ct">Pronto para dar à F.PRIME um<br><em>funcionário que nunca dorme?</em></div>
+    <div>
+      <div class="btn">Fechar acordo →</div>
+      <div class="more">Implementação assistida · Sem API paga · Feito para o Felip</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

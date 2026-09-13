@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>FPOA — Slide 3 · A Solução</title>
+<style>
+  :root{
+    --bg:#070b14; --surface:#0d1424; --surface2:#111a2e; --line:rgba(148,163,184,.14);
+    --gold:#d4af37; --gold2:#f5e7a3; --cyan:#38bdf8; --green:#34d399; --rose:#fb7185;
+    --text:#f1f5f9; --muted:#94a3b8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1920px;height:1080px;overflow:hidden;background:
+    radial-gradient(ellipse 50% 45% at 90% -10%, rgba(212,175,55,.1), transparent 60%),
+    radial-gradient(ellipse 40% 40% at 5% 110%, rgba(56,189,248,.06), transparent 60%),
+    var(--bg);
+    color:var(--text);font-family:'Inter',system-ui,sans-serif;position:relative}
+  body::before{content:'';position:absolute;inset:0;background-image:
+    linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px);
+    background-size:52px 52px;pointer-events:none}
+  .wrap{position:relative;z-index:2;padding:52px 84px 44px;height:1080px;display:flex;flex-direction:column}
+  .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  .num{font-family:'Sora',sans-serif;font-size:13px;letter-spacing:3px;color:var(--gold);font-weight:700}
+  .pageno{font-size:12px;color:var(--muted);letter-spacing:2px}
+  h2{font-family:'Sora',sans-serif;font-size:46px;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
+  h2 em{font-style:normal;color:var(--gold2)}
+  .lead{font-size:17px;color:var(--muted);max-width:1100px;margin-bottom:28px}
+
+  /* pipeline */
+  .pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;align-items:center;margin-bottom:30px}
+  .pp{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:13px;padding:14px 13px;text-align:center;position:relative}
+  .pp .n{font-family:'Sora',sans-serif;font-size:11px;letter-spacing:1.6px;color:var(--gold);font-weight:700;text-transform:uppercase}
+  .pp .i{font-size:21px;margin:7px 0 5px}
+  .pp .d{font-size:11.5px;color:var(--muted);line-height:1.35}
+  .pp-arrow{font-size:18px;color:var(--gold);text-align:center}
+
+  .cols{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;flex:1}
+  .col-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px 28px;display:flex;flex-direction:column}
+  .col-card h3{font-size:14.5px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .col-card h3 .ic{width:28px;height:28px;border-radius:8px;background:rgba(212,175,55,.14);display:flex;align-items:center;justify-content:center;font-size:14px}
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
+  .f{background:var(--surface2);border:1px solid var(--line);border-radius:11px;padding:11px 13px}
+  .f .fh{font-size:13px;font-weight:700;display:flex;align-items:center;gap:7px}
+  .f .fh .di{color:var(--green)}
+  .f p{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.4}
+
+  .tools{display:flex;flex-direction:column;gap:9px;margin-top:auto}
+  .tl{display:flex;align-items:center;gap:11px;background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+  .tl .ti{width:30px;height:30px;border-radius:8px;background:rgba(56,189,248,.1);display:flex;align-items:center;justify-content:center;font-size:14px}
+  .tl .tn{font-size:12.5px;font-weight:600}
+  .tl .td{font-size:11px;color:var(--muted)}
+  .tl .tg{margin-left:auto;font-size:10.5px;color:var(--green);font-weight:700;letter-spacing:.6px}
+  .zero{font-size:12.5px;color:var(--gold2);text-align:center;margin-top:14px;font-weight:600;letter-spacing:.4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="num">02 · A SOLUÇÃO</div>
+    <div class="pageno">FPOA — PITCH F.PRIME · 3/4</div>
+  </div>
+  <h2>O FPOA: um <em>funcionário digital</em> para a F.PRIME</h2>
+  <p class="lead">Você conversa em português, o agente opera. Do orçamento à comissão, tudo rastreado e organizado.</p>
+
+  <div class="pipeline">
+    <div class="pp"><div class="n">1 · Orçamento</div><div class="i">📄</div><div class="d">Consulta de tabela em segundos</div></div>
+    <div class="pp-arrow">➜</div>
+    <div class="pp"><div class="n">2 · Pedido</div><div class="i">📦</div><div class="d">Registrado e confirmado</div></div>
+    <div class="pp-arrow">➜</div>
+    <div class="pp"><div class="n">3 · Follow-up</div><div class="i">🔄</div><div class="d">Rastreio + alerta de parado</div></div>
+    <div class="pp-arrow">➜</div>
+    <div class="pp"><div class="n">4 · Fatura</div><div class="i">🧾</div><div class="d">Aviso automático à fábrica</div></div>
+    <div class="pp-arrow">➜</div>
+    <div class="pp"><div class="n">5 · Comissão</div><div class="i">💰</div><div class="d">Conciliada por fábrica/mês</div></div>
+  </div>
+
+  <div class="cols">
+    <div class="col-card">
+      <h3><span class="ic">⚡</span> Capacidades do agente</h3>
+      <div class="feat">
+        <div class="f"><div class="fh"><span class="di">✓</span>Catálogo unificado</div><p>100+ fábricas, produtos e preços vigentes num só lugar.</p></div>
+        <div class="f"><div class="fh"><span class="di">✓</span>Pedidos rastreados</div><p>Status visível a qualquer momento, zero pedido perdido.</p></div>
+        <div class="f"><div class="fh"><span class="di">✓</span>Comissões conciliadas</div><p>Mensal, por representada; divergência marcada, nunca inventada.</p></div>
+        <div class="f"><div class="fh"><span class="di">✓</span>CRM com recompra</div><p>Alerta de lojista parado há 45+ dias, pronto para reativar.</p></div>
+        <div class="f"><div class="fh"><span class="di">✓</span>Prestação de contas</div><p>Relatório por fábrica em minutos, não dias.</p></div>
+        <div class="f"><div class="fh"><span class="di">✓</span>Roteiro de visitas</div><p>Agrupado por região, priorizando maior ticket.</p></div>
+      </div>
+    </div>
+    <div class="col-card">
+      <h3><span class="ic">🔌</span> Integra com o que você já usa</h3>
+      <div class="tools">
+        <div class="tl"><div class="ti">📊</div><div><div class="tn">Google Sheets</div><div class="td">Catálogo, CRM, comissões</div></div><span class="tg">Já conectado ✓</span></div>
+        <div class="tl"><div class="ti">📧</div><div><div class="tn">Gmail</div><div class="td">Comunicação com fábricas</div></div><span class="tg">Já conectado ✓</span></div>
+        <div class="tl"><div class="ti">📅</div><div><div class="tn">Google Calendar</div><div class="td">Visitas e roteiro</div></div><span class="tg">Já conectado ✓</span></div>
+        <div class="tl"><div class="ti">💬</div><div><div class="tn">Telegram / WhatsApp</div><div class="td">Interface de conversa</div></div><span class="tg">Já conectado ✓</span></div>
+      </div>
+      <div class="zero">💰 Zero custo de API nova — usa infraestrutura que já existe</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

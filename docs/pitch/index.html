@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FPOA — Pitch F.PRIME</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#05070d;color:#e8eaf0;font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh}
+  .deck{display:flex;flex-direction:column;align-items:center;gap:4px;padding:20px}
+  .slide{width:min(96vw,1280px);aspect-ratio:16/9;background:#0b0d12;border-radius:16px;overflow:hidden;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  iframe{width:100%;height:100%;border:none}
+  .nav{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:10px;background:#10141c;border:1px solid #2a3247;padding:10px 16px;border-radius:999px;z-index:10}
+  .nav a{color:#d4af37;text-decoration:none;font-size:14px;font-weight:600;padding:6px 14px;border-radius:999px;transition:.2s}
+  .nav a:hover,.nav a.active{background:rgba(212,175,55,.15)}
+  h1{text-align:center;padding:30px 0 6px;font-size:19px;color:#d4af37;letter-spacing:2px;text-transform:uppercase}
+  .sub{text-align:center;color:#94a3b8;font-size:13px;padding-bottom:14px}
+</style>
+</head>
+<body>
+<h1>FPOA — F.PRIME Operations Agent</h1>
+<div class="sub">Pitch de negócio · 4 slides · Felip Nunes · F.PRIME Representações</div>
+<div class="deck">
+  <div class="slide"><iframe src="slide1.html" title="Capa"></iframe></div>
+  <div class="slide"><iframe src="slide2.html" title="Diagnóstico"></iframe></div>
+  <div class="slide"><iframe src="slide3.html" title="Solução"></iframe></div>
+  <div class="slide"><iframe src="slide4.html" title="Resultados"></iframe></div>
+</div>
+<div class="nav">
+  <a href="#slide1" onclick="scrollToSlide(0)">1 · Capa</a>
+  <a href="#slide2" onclick="scrollToSlide(1)">2 · Diagnóstico</a>
+  <a href="#slide3" onclick="scrollToSlide(2)">3 · Solução</a>
+  <a href="#slide4" onclick="scrollToSlide(3)">4 · Resultados</a>
+</div>
+<script>
+  function scrollToSlide(i){document.querySelectorAll('.slide')[i].scrollIntoView({behavior:'smooth'})}
+  document.querySelectorAll('.nav a').forEach((a,i)=>a.addEventListener('click',()=>scrollToSlide(i)));
+</script>
+</body>
+</html>
