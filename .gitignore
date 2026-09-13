@@ -1,0 +1,24 @@
+# Python / venv
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Config / credenciais (NUNCA commitar)
+.env
+credentials/
+*.json
+!credentials/.gitkeep
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Dados locais
+data/*.local.*
+*.log
