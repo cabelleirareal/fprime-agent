@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>FPOA — F.PRIME Operations Agent | Pitch</title>
+<style>
+  :root{
+    --bg:#0b0d12; --bg2:#10141c; --card:#141926; --card2:#1a2133;
+    --gold:#d4af37; --gold2:#f0d98c; --cyan:#38bdf8; --green:#34d399;
+    --text:#e8eaf0; --muted:#9aa3b8; --line:#2a3247; --rose:#fb7185;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+    width:1920px;height:1080px;overflow:hidden;position:relative;
+    background-image:radial-gradient(ellipse 60% 50% at 20% 0%, rgba(212,175,55,.08), transparent 60%),
+                     radial-gradient(ellipse 50% 40% at 90% 10%, rgba(56,189,248,.06), transparent 60%),
+                     linear-gradient(180deg, #0b0d12 0%, #0d1017 100%);}
+  /* grid sutil */
+  body::before{content:'';position:absolute;inset:0;pointer-events:none;
+    background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
+    background-size:48px 48px;}
+
+  /* ===== LAYOUT ===== */
+  .wrap{position:relative;z-index:2;height:1080px;display:flex;flex-direction:column;padding:38px 56px 30px;}
+
+  /* HEADER */
+  header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .logo{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#d4af37,#8a6d1f);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:#0b0d12}
+  .brand h1{font-size:21px;font-weight:700;letter-spacing:.3px}
+  .brand p{font-size:12px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+  .tagline{font-size:13px;color:var(--gold2);border:1px solid rgba(212,175,55,.35);padding:6px 16px;border-radius:999px;font-weight:600;letter-spacing:.4px}
+
+  /* HERO */
+  .hero{margin-bottom:26px}
+  .hero .kicker{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+  .hero h2{font-size:47px;line-height:1.12;font-weight:800;max-width:1200px}
+  .hero h2 em{font-style:normal;color:var(--gold2)}
+  .hero .sub{font-size:17px;color:var(--muted);margin-top:12px;max-width:1050px;line-height:1.5}
+
+  /* DOR -> SOLUÇÃO */
+  .pain{display:grid;grid-template-columns:1fr 42px 1fr;gap:12px;align-items:stretch;margin-bottom:24px}
+  .pain .box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+  .pain .box h3{font-size:14px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
+  .pain .dores h3{color:var(--rose)}
+  .pain .solucao h3{color:var(--green)}
+  .pain ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 18px}
+  .pain li{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px;line-height:1.35}
+  .pain .dores li::before{content:'✕';color:var(--rose);font-weight:800;font-size:11px}
+  .pain .solucao li::before{content:'✓';color:var(--green);font-weight:800;font-size:12px}
+  .arrow{align-self:center;font-size:26px;color:var(--gold);text-align:center}
+
+  /* CAPACIDADES */
+  .caps{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:24px}
+  .cap{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:14px;padding:16px 14px;position:relative;transition:.2s}
+  .cap:hover{transform:translateY(-2px);border-color:var(--gold)}
+  .cap .ico{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:10px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.3)}
+  .cap h4{font-size:14px;font-weight:700;margin-bottom:5px}
+  .cap p{font-size:11.5px;color:var(--muted);line-height:1.4}
+
+  /* NÚMEROS / PROVA */
+  .proof{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;display:flex;flex-direction:column}
+  .stat .num{font-size:26px;font-weight:800;color:var(--gold2)}
+  .stat .lbl{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.35}
+  .stat .tag{font-size:10.5px;color:var(--cyan);margin-top:6px;letter-spacing:.5px}
+
+  /* RODAPÉ / CTA */
+  .footer{display:flex;justify-content:space-between;align-items:center;margin-top:auto;
+    background:linear-gradient(90deg,rgba(212,175,55,.14),rgba(56,189,248,.06));border:1px solid rgba(212,175,55,.3);
+    border-radius:14px;padding:16px 22px}
+  .footer .cta{font-size:17px;font-weight:800;color:var(--gold2)}
+  .footer .msg{font-size:12.5px;color:var(--muted);line-height:1.4}
+  .footer .cred{font-size:11px;color:var(--muted);text-align:right;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <div class="logo">F</div>
+      <div>
+        <h1>F.PRIME Operations Agent</h1>
+        <p>FPOA · Agente Operacional-Comercial Inteligente</p>
+      </div>
+    </div>
+    <div class="tagline">⚡ Operação 24/7 · Sem API paga · Feito para a F.PRIME</div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="kicker">Representação Comercial de Vestuário · Pronto para escalar</div>
+    <h2>Sua carteira de <em>100+ fábricas</em>, operada por<br>um assistente que <em>nunca dorme</em>.</h2>
+    <div class="sub">O FPOA elimina os gargalos que travam o crescimento do escritório — cataloga, rastreia pedidos,
+    concilia comissões, ativa a recompra e presta contas. Em linguagem simples: <b>você conversa, ele opera.</b></div>
+  </div>
+
+  <!-- DOR -> SOLUÇÃO -->
+  <div class="pain">
+    <div class="box dores">
+      <h3>Hoje · Os 6 gargalos</h3>
+      <ul>
+        <li>Catálogo de 100+ fábricas espalhado</li>
+        <li>Follow-up de pedido manual</li>
+        <li>WhatsApp como "sistema"</li>
+        <li>Comissões sem conciliação</li>
+        <li>CRM de lojistas inexistente</li>
+        <li>Prestação de contas leva dias</li>
+      </ul>
+    </div>
+    <div class="arrow">➜</div>
+    <div class="box solucao">
+      <h3>Com o FPOA · A solução</h3>
+      <ul>
+        <li>Catálogo unificado, consulta em segundos</li>
+        <li>Pedido rastreado da cotação à comissão</li>
+        <li>Registro estruturado, zero informação perdida</li>
+        <li>Conciliação mensal automática por fábrica</li>
+        <li>CRM com alerta de recompra ativa</li>
+        <li>Relatórios sob demanda em minutos</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CAPACIDADES -->
+  <div class="caps">
+    <div class="cap"><div class="ico">📦</div><h4>Catálogo</h4><p>Fábricas, produtos, preços e condições num só lugar. Consulta instantânea.</p></div>
+    <div class="cap"><div class="ico">📋</div><h4>Pedidos</h4><p>Da cotação ao faturamento, com follow-up e alerta de pedido parado.</p></div>
+    <div class="cap"><div class="ico">💰</div><h4>Comissões</h4><p>Conciliação mensal por fábrica; divergências marcadas, nunca "resolvidas" sozinho.</p></div>
+    <div class="cap"><div class="ico">🤝</div><h4>CRM Lojistas</h4><p>Histórico de compras e recompra ativa — quem não compra há 45 dias, na sua tela.</p></div>
+    <div class="cap"><div class="ico">📊</div><h4>Relatórios</h4><p>Prestação de contas por representada em minutos, não dias.</p></div>
+    <div class="cap"><div class="ico">🗺️</div><h4>Roteiro</h4><p>Visitas agrupadas por região, priorizando lojistas de maior ticket.</p></div>
+  </div>
+
+  <!-- PROVA / NÚMEROS -->
+  <div class="proof">
+    <div class="stat"><div class="num">100+</div><div class="lbl">fábricas representadas operando num único catálogo</div><div class="tag">Escala sem equipe</div></div>
+    <div class="stat"><div class="num">&lt; 5 min</div><div class="lbl">tempo de resposta a lojista (hoje: horas ou nunca)</div><div class="tag">Speed Engine</div></div>
+    <div class="stat"><div class="num">100%</div><div class="lbl">de comissões rastreadas e conciliáveis</div><div class="tag">Zero comissão esquecida</div></div>
+    <div class="stat"><div class="num">+15%</div><div class="lbl">recorrência de lojistas em 6 meses (meta de recompra ativa)</div><div class="tag">Crescimento previsível</div></div>
+  </div>
+
+  <!-- FOOTER / CTA -->
+  <div class="footer">
+    <div>
+      <div class="cta">Pronto para operar com um funcionário que nunca dorme.</div>
+      <div class="msg">Integra com o que você já usa (Sheets · Gmail · Calendar · Telegram). Sem API paga. Sem curva de aprendizado: você conversa em português.</div>
+    </div>
+    <div class="cred">
+      FPOA · v1.0<br>
+      Feito por HERMES OMNISYSTEM · 2026
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
